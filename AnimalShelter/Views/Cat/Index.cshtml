@@ -1,0 +1,45 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class='container'>
+  <h1>Cats Available to Adopt</h1>
+    <form class="" action="/cat/sorted" method="post">
+      <div class="row">
+        <div class="form-group col-md-8">
+          <label for="column">Select list:</label>
+          <select class="form-control" id="column" name="column">
+            <option value="name">Name</option>
+            <option value="breed">Breed</option>
+            <option value="age">Age</option>
+            <option value="date_admittance">Date of Admittance</option>
+            <option value="gender">Gender</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-danger" name="button">Sort</button>
+        </div>
+      </div>
+    </form>
+
+    @foreach (var cat in Model)
+    { <div class = "row">
+        <div class = "col-md-2">
+          <p>@cat.GetName()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@cat.GetBreed()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@cat.GetAge()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@cat.GetDate()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@cat.GetGender()</p>
+        </div>
+      </div>
+    }
+
+</div>
