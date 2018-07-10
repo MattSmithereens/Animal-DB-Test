@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using AnimalShelter.Models;
+using System.Collections.Generic;
 
 namespace AnimalShelter.Controllers
 {
@@ -8,7 +9,8 @@ namespace AnimalShelter.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            List<Animal> allAnimals = Animal.GetAll();
+            return View(allAnimals);
         }
     }
 }

@@ -4,18 +4,56 @@
 
   <div class='container'>
     <h1>Animal Shelter</h1>
-
-      <div class="dropdown">
-        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Sort Type
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/cat/name">Name</a>
-          <a class="dropdown-item" href="/cat/breed">Breed</a>
-          <a class="dropdown-item" href="/cat/age">Age</a>
-          <a class="dropdown-item" href="/cat/date">Date Of Admittance</a>
-          <a class="dropdown-item" href="/cat/gender">Gender</a>
+    <p>Choose the type of animal you'd like to adopt and how you'd like to sort them.</p>
+    <form action="/animal" method="post">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="type">Select Type Of Animal:</label>
+          <select class="form-control" name="type">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="chicken">Chicken</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="column">Select Sorting Type:</label>
+          <select class="form-control" name="column">
+            <option value="name">Name</option>
+            <option value="breed">Breed</option>
+            <option value="age">Age</option>
+            <option value="date_admittance">Date of Admittance</option>
+            <option value="gender">Gender</option>
+          </select>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-danger" name="button">Sort</button>
+        </div>
+      </div>
+    </form>
+
+    @foreach (var animal in Model)
+    { <div class = "row">
+        <div class = "col-md-2">
+          <p>@animal.GetName()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@animal.GetBreed()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@animal.GetAge()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@animal.GetDate()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@animal.GetGender()</p>
+        </div>
+        <div class = "col-md-2">
+          <p>@animal.GetAnimalType()</p>
+        </div>
+      </div>
+    }
 
   </div>

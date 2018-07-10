@@ -5,22 +5,24 @@ using System;
 
 namespace AnimalShelter.Controllers
 {
-    public class CatController : Controller
+    public class AnimalController : Controller
     {
-        [HttpGet("/cat")]
+        [HttpPost("/animal")]
         public ActionResult Index()
         {
-            List<Cat> allCats = Cat.GetAll();
-            return View(allCats);
+            string type = Request.Form["type"];
+            string column = Request.Form["column"];
+            List<Animal> allAnimals = Animal.SortBy(type, column);
+            return View(allAnimals);
         }
 
-        [HttpPost("/cat/sorted")]
-        public ActionResult SortCats()
+        [HttpPost("/animal/sorted")]
+        public ActionResult SortAnimals()
         {
+            string type = Request.Form["type"];
             string column = Request.Form["column"];
-            Console.WriteLine(column);
-            List<Cat> allCats = Cat.SortBy(column);
-            return View("Index", allCats);
+            List<Animal> allAnimals = Animal.SortBy(type, column);
+            return View("Index", allAnimals);
         }
         //
         // [HttpGet("/cat/breed")]
