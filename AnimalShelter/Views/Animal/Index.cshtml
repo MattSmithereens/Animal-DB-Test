@@ -4,7 +4,7 @@
 
 <div class='container'>
   <h1>Animals Available to Adopt</h1>
-    <form class="" action="/animal/sorted" method="post">
+    <form class="inputs" action="/animal/sorted" method="post">
       <div class="row">
         <div class="form-group col-md-6">
           <label for="column">Select Type Of Animal:</label>
@@ -14,7 +14,7 @@
             <option value="chicken">Chicken</option>
           </select>
         </div>
-        <div class="form-group col-md-8">
+        <div class="form-group col-md-6">
           <label for="column">Select list:</label>
           <select class="form-control" name="column">
             <option value="name">Name</option>
@@ -31,7 +31,7 @@
     </form>
 
     @foreach (var animal in Model)
-    { <div class = "row">
+    { <div class = "row list">
         <div class = "col-md-2">
           <p>@animal.GetName()</p>
         </div>

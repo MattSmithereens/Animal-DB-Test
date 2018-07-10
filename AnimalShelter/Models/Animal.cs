@@ -108,6 +108,19 @@ namespace AnimalShelter.Models
         return allAnimals;
       }
 
+      public static void Save()
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"INSERT INTO `animal`(`ID`, `name`, `gender`, `date_admittance`, `breed`, `age`, `type`) VALUES (68, 'animalName', 'breed', 43, 'date', 'gender', 'type')";
+        conn.Close();
+        if (conn != null)
+        {
+            conn.Dispose();
+        }
+      }
+
       public static void DeleteAll()
        {
            MySqlConnection conn = DB.Connection();

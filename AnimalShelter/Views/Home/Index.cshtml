@@ -5,7 +5,7 @@
   <div class='container'>
     <h1>Animal Shelter</h1>
     <p>Choose the type of animal you'd like to adopt and how you'd like to sort them.</p>
-    <form action="/animal" method="post">
+    <form class="inputs" action="/animal" method="post">
       <div class="row">
         <div class="form-group col-md-6">
           <label for="type">Select Type Of Animal:</label>
@@ -34,7 +34,7 @@
     </form>
 
     @foreach (var animal in Model)
-    { <div class = "row">
+    { <div class = "row list">
         <div class = "col-md-2">
           <p>@animal.GetName()</p>
         </div>

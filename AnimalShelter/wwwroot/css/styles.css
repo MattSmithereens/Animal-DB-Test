@@ -1,0 +1,27 @@
+.inputs {
+  margin-bottom: 3rem;
+}
+.list:nth-of-type(2n)
+{
+  background-color: #ffeafd;
+}
+
+.list p {
+  margin:10px;
+}
+
+.list {
+  border: 1px solid #ff29b1;
+}
+
+.btn-danger {
+    color: black;
+    background-color: #ffeafd;
+    border-color: #ff29b1;
+}
+
+.btn-danger:hover {
+    color: black;
+    background-color: #ff29b1;
+    border-color: #d22f96;
+}

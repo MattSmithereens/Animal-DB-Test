@@ -10,6 +10,7 @@ namespace AnimalShelter.Controllers
         public ActionResult Index()
         {
             List<Animal> allAnimals = Animal.GetAll();
+            Animal.Save();
             return View(allAnimals);
         }
     }
